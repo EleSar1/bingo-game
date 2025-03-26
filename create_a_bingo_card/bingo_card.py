@@ -57,7 +57,7 @@ def display_bingo_card(bingo_card: dict) -> str:
 
 def main():
 
-    bingo_card = bingo_card_generator()
+    bingo_card = generate_bingo_card()
     print(display_bingo_card(bingo_card))
 
 
