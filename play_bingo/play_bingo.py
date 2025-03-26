@@ -34,7 +34,7 @@ def shuffle_bingo_numbers() -> list:
     return bingo_numbers
 
 
-def play_bingo():
+def play_bingo() -> int:
 
     """
     Simulates a single game of Bingo.
@@ -64,7 +64,7 @@ def play_bingo():
             return count_calls     
 
 
-def simulate_n_games(n=1000):
+def simulate_n_games(n: int=1000) -> tuple[int, int, float]:
 
     """
     Simulates multiple games of Bingo and collects statistics on the number of calls needed to win.
@@ -78,6 +78,9 @@ def simulate_n_games(n=1000):
             - max_calls (int): The maximum number of calls needed to win a game.
             - avg (float): The average number of calls needed to win a game.
     """
+
+    if not isinstance(n, int):
+        raise(TypeError, "Expected int, got a non-int value.")
 
     count_calls = [play_bingo() for _ in range(n)]
     
