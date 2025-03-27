@@ -10,7 +10,7 @@ def test_simulate_n_games():
     
     min_calls, max_calls, avg = simulate_n_games(1000)
 
-    assert min_calls > 0, "Minimum calls should be more than 0."
+    assert min_calls >= 5, "Minimum calls should be equal or more than 5."
     assert max_calls <= 75, "Maximum calls should be 75 or less."
     assert min_calls <= avg <= max_calls, "Average should be between min and max calls."
 
